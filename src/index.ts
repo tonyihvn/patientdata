@@ -10,7 +10,7 @@ import { configSchema } from './config-schema';
 const moduleName = '@openmrs/esm-template-app';
 
 const options = {
-  featureName: 'root-world',
+  featureName: '',
   moduleName,
 };
 
@@ -40,8 +40,34 @@ export function startupApp() {
 export const root = getAsyncLifecycle(() => import('./root.component'), options);
 
 /**
+ * Care Card Form Page - renders the form when accessed via patient chart
+ */
+export const careCradFormPage = getAsyncLifecycle(
+  () => import('./carecard-form-page/carecard-form-page.component'),
+  options,
+);
+
+/**
+ * Care Card Dashboard - the redesigned multi-form dashboard with sidebar.
+ */
+export const careCradDashboard = getAsyncLifecycle(
+  () => import('./carecard-dashboard/carecard-dashboard.component'),
+  options,
+);
+
+/**
  * The following are named exports for the extensions defined in this frontend modules. See the `routes.json` file to see how these are used.
  */
+export const careCradDashboardButton = getAsyncLifecycle(
+  () => import('./carecard-dashboard-button/carecard-dashboard-button.component'),
+  options,
+);
+
+export const careCradSidebarLink = getAsyncLifecycle(
+  () => import('./carecard-sidebar-link/carecard-sidebar-link.component'),
+  options,
+);
+
 export const redBox = getAsyncLifecycle(() => import('./boxes/extensions/red-box.component'), options);
 
 export const blueBox = getAsyncLifecycle(() => import('./boxes/extensions/blue-box.component'), options);

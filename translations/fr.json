@@ -20,5 +20,17 @@
   "patientGetterExplainer": "Essayez de cliquer sur le bouton ci-dessous pour récupérer un patient depuis le backend",
   "resources": "Ressources",
   "usefulLinks": "Ci-dessous quelques liens vers des ressources utiles",
-  "welcomeText": "Bienvenue dans l'application O3 Template"
+  "welcomeText": "Bienvenue dans l'application O3 Template",
+  "patientList": "Liste des Patients",
+  "patientListDescription": "Affichage de tous les patients dans cette instance OpenMRS",
+  "name": "Nom",
+  "gender": "Genre",
+  "dateOfBirth": "Date de Naissance",
+  "patientId": "ID du Patient",
+  "noPatients": "Aucun patient trouvé",
+  "totalPatients": "Nombre total de patients",
+  "errorFetchingPatients": "Erreur lors de la récupération des patients",
+  "noName": "Pas de nom",
+  "notSpecified": "Non spécifié",
+  "noId": "Pas d'ID"
 }

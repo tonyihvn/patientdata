@@ -1,0 +1,189 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: $spacing-06;
+  padding: $spacing-06;
+  min-height: calc(100vh - 4rem);
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  background: var(--cds-layer, #ffffff);
+  border: 1px solid var(--cds-border-subtle, #e0e0e0);
+  border-radius: 4px;
+  padding: $spacing-05;
+  height: fit-content;
+  position: sticky;
+  top: $spacing-05;
+}
+
+.sidebarTitle {
+  @include type-style('productive-heading-02');
+  margin: 0 0 $spacing-04 0;
+}
+
+.sidebarSubtitle {
+  @include type-style('label-01');
+  text-transform: uppercase;
+  margin: $spacing-05 0 $spacing-03 0;
+  color: var(--cds-text-secondary, #525252);
+}
+
+.formList,
+.historyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.formItem,
+.historyItem {
+  margin: 0 0 $spacing-02 0;
+}
+
+.formButton {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: $spacing-03 $spacing-04;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--cds-text-primary, #161616);
+
+  &:hover {
+    background: var(--cds-layer-hover, #e8e8e8);
+  }
+
+  &.activeForm {
+    background: var(--cds-layer-selected, #d0d0d0);
+    border-color: var(--cds-border-strong, #8d8d8d);
+    font-weight: 600;
+  }
+}
+
+.historyEntry {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-02;
+  padding: $spacing-03;
+  border: 1px solid var(--cds-border-subtle, #e0e0e0);
+  border-radius: 2px;
+  margin-bottom: $spacing-03;
+  background: var(--cds-layer, #ffffff);
+
+  &.activeHistoryEntry {
+    border-color: var(--cds-focus, #0f62fe);
+    background: var(--cds-layer-selected, #f4f4f4);
+  }
+}
+
+.historyDate {
+  @include type-style('body-short-01');
+  font-weight: 600;
+}
+
+.historyActions {
+  display: flex;
+  gap: $spacing-03;
+}
+
+.historyEmpty {
+  @include type-style('body-short-01');
+  color: var(--cds-text-secondary, #525252);
+  font-style: italic;
+}
+
+.mainPanel {
+  background: var(--cds-background, #f4f4f4);
+  border-radius: 4px;
+  min-width: 0;
+}
+
+.modeBanner {
+  margin-bottom: $spacing-04;
+}
+
+.headerBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-04;
+  margin-bottom: $spacing-05;
+}
+
+.headerActions {
+  display: flex;
+  gap: $spacing-03;
+}
+
+.patientBanner {
+  background: var(--cds-layer, #ffffff);
+  border: 1px solid var(--cds-border-subtle, #e0e0e0);
+  border-radius: 4px;
+  padding: $spacing-05;
+  margin-bottom: $spacing-05;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+}
+
+.patientBannerPrimary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-04;
+}
+
+.patientName {
+  @include type-style('productive-heading-03');
+  font-weight: 600;
+}
+
+.patientMeta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: $spacing-02;
+}
+
+.patientBannerSecondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-05;
+  @include type-style('body-short-01');
+  color: var(--cds-text-secondary, #525252);
+}
+
+.formMeta {
+  margin-bottom: $spacing-04;
+  padding-bottom: $spacing-03;
+  border-bottom: 1px solid var(--cds-border-subtle, #e0e0e0);
+}
+
+.formMetaTitle {
+  @include type-style('productive-heading-02');
+  margin: 0 0 $spacing-02 0;
+}
+
+.formMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-05;
+  @include type-style('body-short-01');
+  color: var(--cds-text-secondary, #525252);
+
+  code {
+    background: var(--cds-layer-accent, #e8e8e8);
+    padding: 0 $spacing-02;
+    border-radius: 2px;
+    font-size: 0.8125rem;
+  }
+}

@@ -1,0 +1,178 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+
+.pageContainer {
+  padding: $spacing-07;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: $spacing-07;
+}
+
+.title {
+  @include type-style('productive-heading-04');
+  margin: 0 0 $spacing-03 0;
+}
+
+.subtitle {
+  @include type-style('body-long-01');
+  margin: 0;
+  color: var(--cds-text-secondary, #525252);
+}
+
+.patientPicker {
+  padding: $spacing-06;
+  max-width: 640px;
+
+  > :global(.cds--inline-notification) {
+    margin-bottom: $spacing-05;
+    max-width: 100%;
+  }
+}
+
+.notification {
+  margin-bottom: $spacing-05;
+  max-width: 100%;
+}
+
+.pageStack {
+  margin-top: $spacing-05;
+}
+
+.section {
+  padding: $spacing-06;
+}
+
+.sectionTitle {
+  @include type-style('productive-heading-03');
+  margin: 0 0 $spacing-05 0;
+}
+
+.column {
+  margin-bottom: $spacing-05;
+}
+
+/* Bootstrap-style 12-column grid driven by per-question `layout` props.
+   Column span is provided via the CSS custom properties --cc-col-sm /
+   --cc-col-md / --cc-col-lg (set inline by the component). */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{$spacing-04};
+  margin-right: -#{$spacing-04};
+}
+
+.col {
+  --cc-col-sm: 12;
+  --cc-col-md: 3;
+  --cc-col-lg: 3;
+  box-sizing: border-box;
+  padding-left: $spacing-04;
+  padding-right: $spacing-04;
+  margin-bottom: $spacing-05;
+  flex: 0 0 calc(var(--cc-col-sm) / 12 * 100%);
+  max-width: calc(var(--cc-col-sm) / 12 * 100%);
+
+  @media (min-width: 672px) {
+    flex-basis: calc(var(--cc-col-md) / 12 * 100%);
+    max-width: calc(var(--cc-col-md) / 12 * 100%);
+  }
+
+  @media (min-width: 1056px) {
+    flex-basis: calc(var(--cc-col-lg) / 12 * 100%);
+    max-width: calc(var(--cc-col-lg) / 12 * 100%);
+  }
+
+  /* Make every Carbon control stretch to fill the column. By default the
+     DatePicker wrapper and a few others have `width: auto`, which makes
+     them ignore the column's `lg`/`md` span. Forced with !important so
+     Carbon's own styles can never override per-question layout. */
+  :global {
+    .cds--date-picker,
+    .cds--date-picker--single,
+    .cds--date-picker--simple,
+    .cds--date-picker--range,
+    .cds--date-picker-container,
+    .cds--date-picker-input__wrapper,
+    .cds--date-picker__input,
+    .cds--form-item,
+    .cds--text-input-wrapper,
+    .cds--text-input,
+    .cds--number,
+    .cds--number__input-wrapper,
+    .cds--select,
+    .cds--select-input,
+    .cds--select-input__wrapper,
+    .cds--text-area,
+    .cds--text-area__wrapper,
+    .flatpickr-input {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      flex: 1 1 auto !important;
+    }
+
+    /* The DatePicker root is a flex container; force its children to
+       stack to full width instead of wrapping at their natural size. */
+    .cds--date-picker.cds--date-picker--single .cds--date-picker-container,
+    .cds--date-picker.cds--date-picker--simple .cds--date-picker-container {
+      display: block !important;
+    }
+  }
+}
+
+/* Validator-error tooltip: a small floating popup pinned to the top-right
+   of the field, visible whenever a field has an error. */
+.fieldWrapper {
+  position: relative;
+}
+
+.tooltipError {
+  position: absolute;
+  top: -$spacing-05;
+  right: 0;
+  z-index: 10;
+  background: var(--cds-support-error, #da1e28);
+  color: var(--cds-text-on-color, #ffffff);
+  padding: $spacing-02 $spacing-03;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  max-width: 24rem;
+  white-space: normal;
+  pointer-events: none;
+}
+
+.tooltipError::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: $spacing-05;
+  width: 8px;
+  height: 8px;
+  background: var(--cds-support-error, #da1e28);
+  transform: rotate(45deg);
+}
+
+.tabActions {
+  margin-top: $spacing-06;
+  width: 100%;
+}
+
+.footerActions {
+  margin-top: $spacing-07;
+}
+
+:global {
+  .cds--tab-content {
+    padding: $spacing-05 0;
+  }
+
+  .cds--css-grid {
+    padding: 0;
+  }
+}

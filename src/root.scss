@@ -2,7 +2,10 @@
 @use '@carbon/type';
 
 .container {
-  padding: layout.$spacing-07;
+  padding: layout.$spacing-05;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .welcome {

@@ -44,6 +44,7 @@
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
+    "@openmrs/esm-form-engine-lib": "^4.1.0",
     "@openmrs/esm-framework": "*",
     "dayjs": "1.x",
     "react": "18.x",
@@ -52,7 +53,8 @@
     "rxjs": "6.x"
   },
   "devDependencies": {
-    "@openmrs/esm-framework": "next",
+    "@openmrs/esm-form-engine-lib": "^4.1.0",
+    "@openmrs/esm-framework": "^9.0.3-pre.4453",
     "@openmrs/esm-styleguide": "next",
     "@playwright/test": "^1.52.0",
     "@swc/cli": "^0.3.12",
@@ -85,7 +87,7 @@
     "jest-cli": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.2",
-    "openmrs": "next",
+    "openmrs": "^9.0.3-pre.4453",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

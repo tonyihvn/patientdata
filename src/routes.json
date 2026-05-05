@@ -6,6 +6,34 @@
   },
   "extensions": [
     {
+      "name": "Care Card Button",
+      "component": "careCradDashboardButton",
+      "slot": "patient-actions-slot",
+      "order": 3,
+      "online": true,
+      "offline": true
+    },
+    {
+      "name": "Care Card Summary Button",
+      "component": "careCradDashboardButton",
+      "slot": "patient-chart-summary-dashboard-slot",
+      "order": 1
+    },
+    {
+      "name": "Care Card Sidebar Link",
+      "component": "careCradSidebarLink",
+      "slot": "patient-chart-dashboard-slot",
+      "order": 10,
+      "meta": {
+        "path": "care-card",
+        "slot": "patient-chart-care-card-dashboard-slot",
+        "columns": 1,
+        "title": "Care Card"
+      },
+      "online": true,
+      "offline": true
+    },
+    {
       "name": "Red box",
       "component": "redBox",
       "slot": "Boxes"
@@ -15,16 +43,16 @@
       "component": "blueBox",
       "slot": "Boxes"
     },
-        {
+    {
       "name": "Brand box",
-      "component": "blueBox",
+      "component": "brandBox",
       "slot": "Boxes"
     }
   ],
   "pages": [
     {
       "component": "root",
-      "route": "root"
+      "route": "patientdata"
     }
   ]
 }

@@ -1,0 +1,17 @@
+@use '@carbon/layout';
+@use '@carbon/type';
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: layout.$spacing-02;
+
+  .button {
+    white-space: nowrap;
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+  }
+}

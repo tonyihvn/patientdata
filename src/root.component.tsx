@@ -9,29 +9,13 @@
  */
 
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Boxes } from './boxes/slot/boxes.component';
-import Greeter from './greeter/greeter.component';
-import PatientGetter from './patient-getter/patient-getter.component';
-import Resources from './resources/resources.component';
+import CarecardDashboard from './carecard-dashboard/carecard-dashboard.component';
 import styles from './root.scss';
 
 const Root: React.FC = () => {
-  const { t } = useTranslation();
-
   return (
     <div className={styles.container}>
-      <h3 className={styles.welcome}>{t('welcomeText', 'Welcome to the O3 Template app')}</h3>
-      <p className={styles.explainer}>
-        {t('explainer', 'The following examples demonstrate some key features of the O3 framework')}.
-      </p>
-      {/* Greeter: demonstrates the configuration system */}
-      <Greeter />
-      {/* Boxes: demonstrates the extension system */}
-      <Boxes />
-      {/* PatientGetter: demonstrates data fetching */}
-      <PatientGetter />
-      <Resources />
+      <CarecardDashboard />
     </div>
   );
 };
